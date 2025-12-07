@@ -1,0 +1,732 @@
+
+
+</body>
+</html>
+
+<!Doctype html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0">
+    <title>cv generator</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.3/jspdf.umd.min.js"></script>
+
+  </head>
+  <body>
+    
+    <div class="hide">
+      <div class="fi">
+      <h1 class="fill">Fill the necessary field</h1>
+      </div>
+      <div class="touch">
+      <label class="maka" for="nameid">Name</label>
+    <input  id="nameid" placeholder="john wick" required>
+      <label for="emailid">E-mail</label>
+      <input id="emailid" placeholder=" thisisagmail@gmail.com">
+      <label for="phoneid">Phone Number</label>
+      <input id="phoneid" placeholder="+23407044411880" required>
+      <label for="portid">portfolio (optional)</label>
+      <input id="portid" placeholder="https://example.com">
+        <label for="describeyourselfid">say someting about yourself</label>
+        <input id="describeyourselfid" placeholder="talk about yourself and what you to do">
+        <label for="job-titleid">your profession</label>
+        <input id="job-titleid" placeholder="medical doctor">
+        <label for="current-jobid">company name </label>
+        <input id="current-jobid" placeholder="b8build48">
+        <label for="job-detailsid">more about your company its website and location (compulsory) </label>
+        <input id="job-detailsid" placeholder="b8build48 software creating company, b8build48.pxxl.click">
+        <label for="achievmentsid">your job responsibilty</label>
+        <input id="achievmentsid" placeholder="">
+        <label for="achievments2id">job Experience</label>
+        <input id="achievments2id" placeholder="3 years experience in web development">
+        <label for="input-box">your current education</label>
+        <select id="select-option">
+              <option value="still in secondary school">select</option>
+    <option value="still in secondary school">Still in Secondary School</option>
+    <option value="done with secondary school">Done with Secondary School</option>
+    <option value="currently in university">Currently in University</option>
+    <option value="Diploma">Diploma</option>
+    <option value="Higher National Diploma (HND)">Higher National Diploma (HND)</option>
+    <option value="Bachelor's Degree">Bachelor's Degree</option>
+    <option value="master's degree">Master's Degree</option>
+    <option value="PhD">PhD</option>
+    <option value="None">None</option>
+</select>
+<input type="text" id="input-box" />
+        <label >your best skills </label>
+        <input id="skill-name1id">
+        <input id="skill-name4id">
+        <label >your weak skills</label>
+        <input id="skill-name2id">
+        <input id="skill-name3id">
+      </div>
+      </div>
+    <button class="btn84" id="nextbtn" onclick="">next</button>
+    <div ></div>
+    <button class="btn48" id="nextbty" onclick="">back</button>
+      <button id="downloadBtn" onclick="downloadPDF()"
+        style="
+        display: none;
+  position: fixed;
+  top:0;
+  right:8;
+  width:84px;
+  height:48px;
+  color:#f2f2f2;
+  background-color:blue;
+  font-size:16px;
+  border:none;
+        ">Download PDF</button>
+
+    
+
+  <div class="allinone" id="allinone">
+<div class="cv-container1" id="cv-container ">
+  <header class="cv-header">
+    <section class="bpic">
+  <div class="upload-box">
+    <input type="file" id="photo-input" accept="image/*">
+    <label for="photo-input" id="upload-label"></label>
+    <img id="uploaded-image" src="" alt="Uploaded Image">
+  </div>
+</section>
+
+    <h1 class="name"></h1>
+    <p class="allhead"> <p class="email">Email: |</p>  <p class="phone">Phone-number: |</p> <p class="port">portfofio: |</p> </p>
+  </header>
+
+  <section class="personal-statement">
+    <h2>Personal Statement</h2>
+    <p class="describeyourself"></p>
+  </section>
+
+  <section class="work-experience">
+    <h2>Work Experience</h2>
+    <div class="job">
+      <h3 class="job-title"></h3>
+      <ul>
+        <li class="current-job"></li>
+        <li class="job-details"></li>
+        <li class="achievments"></li>
+       <li class="achievments2"></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="education">
+    <h2>highest level of Education attained</h2>
+    <p class="your-current-education"></p>
+  </section>
+
+  <section class="skills">
+    <h2>Skills</h2>
+    <div class="skill">
+      <span id="skill80%" class="skill-name1"></span>
+      <div class="meter"><div class="meter-fill" style="width: 80%;"></div></div>
+    </div>
+    <div class="skill">
+      <span id="skill60%" class="skill-name2"></span>
+      <div class="meter"><div class="meter-fill" style="width: 60%;"></div></div>
+    </div>
+    <div class="skill">
+      <span id="skill75%" class="skill-name3"></span>
+      <div class="meter"><div class="meter-fill" style="width: 75%;"></div></div>
+    </div>
+    <div class="skill">
+      <div id="skill100%" class="skill-name4"></div>
+      <div class="meter"><div class="meter-fill" style="width: 100%;"></div></div>
+    </div>
+
+  </section>
+</div>
+       <p style="
+      background-color: yellow;
+      ">a b8build48 cv production</p>
+    </div>
+    </div>
+    
+</body>
+</html>
+ <style>
+*{
+  box-sizing: border-box;
+  font-size:6px;
+}
+    .cv-container1 {
+      width: 75%;
+      font-family: Arial, sans-serif;
+      
+    }
+.fill{
+  font-size: 28px;
+  color:whitesmoke; /* Sky blue */
+  font-weight: bold;
+  margin-bottom: 10px;
+text-align: left;
+padding: 0 5px;
+
+}
+.fi{
+  border: 1px solid whitesmoke;
+ border-bottom: none;
+  width: 84%;
+  margin: 8px auto;
+  position: relative;
+  top: 8px;
+   border-radius: 6px;
+}
+.a1{
+  font-size: 28px;
+}
+.describeyourself{
+  font-size: 8px;
+}
+body{
+  background: rgb(31, 31, 58);
+  color: white;
+  font-size: 8px;
+}
+  input{
+    display:block;
+    margin:0 auto;
+    width:100%;
+    height:48px;
+    border-radius: 6px;
+    border:1px solid black;
+    font-size:20px;
+    border: 2px solid #ddd;
+    margin-top: 18px;
+margin-bottom: 18px;
+  box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.5); /* yellow glow */
+background-color: #121212;
+    color:white;
+
+  }
+input::placeholder{
+  font-size:20px;
+padding: 18px 18px;
+}
+label{
+  font-size:20px;
+  color: whitesmoke;
+ margin-left:4.8px;
+    display:block;
+}
+.touch{
+  padding: 10px 15px;
+   border-radius: 6px;
+  background-color: #02010c;
+  margin: 0 auto;
+width: 84%;
+  margin-bottom:84px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border: 2px solid #ddd;
+}
+    .cv-header {
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 4.8px;
+    }
+    section {
+      margin-top: 20px;
+    }
+    h2 {
+      color: #333;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .skill {
+      margin-bottom: 4.8px;
+    }
+    .skill-name {
+      display: inline-block;
+      width: 150px;
+    }
+    option{
+      font-size: 28px;
+    }
+    .meter {
+      display: inline-block;
+      width: 200px;
+      height: 10px;
+      background: #eee;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .meter-fill {
+      height: 100%;
+      background: yellow;
+      border-radius: 5px;
+    }
+    .job {
+      margin-bottom: 4.8px;
+    }
+  .allinone {
+  width: fit-content;
+    display: none;
+    outline: 2px solid black;
+    padding:10px;
+    margin: 0 auto;
+    margin-top:84px;
+    background:white;
+      color:black;
+}
+  .allhead{
+    width: 248px;
+  }
+  .name{
+    font-size: 20px;
+  }
+.email,.phone,#port{
+  display: inline-block;
+  
+}
+.e{
+  display:block;
+}
+p{
+  display: inline-block;
+}
+ .btn48{
+   display: none;
+  position: fixed;
+  top:0;
+  left:8;
+  width:84px;
+  height:48px;
+  color:#f2f2f2;
+  background-color:blue;
+  font-size:16px;
+  border:none;
+   z-index:10;
+   
+ }
+
+.btn84{
+  display: block;
+  position: fixed;
+  width: 80%;
+  height: 40px;
+  margin: 0px auto;
+  color:#f2f2f2;
+  
+  background-color: black;
+    border-radius: 40px;
+  font-size:28px;
+  bottom:0;
+  left:28px;
+  right: 28px;
+  
+}
+.btn84:active,
+.btn84:hover{
+  background-color: #7cf03d;
+  border: 2px solid #7cf03d;
+}
+  .upload-box {
+  position: relative;
+  width: 84px;
+  height: 100px;
+  border: 2px dashed #ccc;
+  
+  text-align: center;
+  cursor: pointer;
+  
+}
+.upload-box input[type="file"] {
+  display: none;
+}
+
+.upload-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  color: #666;
+  line-height: 160px;
+}
+
+.upload-box label:hover {
+  border-color: #aaa;
+  background-color: #eee;
+}
+
+#uploaded-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  position: relative;
+  top:0;
+  left:0;
+  
+}
+
+  
+body{
+  font-family: arial;
+}
+
+
+  </style>
+<style>
+#select-option {
+    width: 100px;
+    height: 48px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: top;
+  position:absolute;
+  margin-top:18px;
+  
+}
+
+#input-box {
+    width: 184px;
+    height: 48px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position:relative;
+  right:-100px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+#select-option:focus, #input-box:focus {
+    outline: none;
+    border-color: #aaa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#downloadBtn:active{
+background-color: #7cf03d;
+color: #02010c;
+}
+  </style>
+<script>
+  const select = document.getElementById('select-option');
+  const inputBox = document.getElementById('input-box');
+
+  select.addEventListener('change', (e) => {
+    inputBox.value = e.target.value;
+    document.querySelector('.your-current-education').textContent= inputBox.value;
+  });
+</script>
+     <script  defer>
+  //picture bix
+  const photoInput = document.getElementById('photo-input');
+const uploadLabel = document.getElementById('upload-label');
+const uploadedImage = document.getElementById('uploaded-image');
+
+photoInput.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  const reader = new FileReader();
+  reader.onload = () => {
+    uploadedImage.src = reader.result;
+    uploadedImage.style.display = 'block';
+    uploadLabel.style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+});
+  //button
+    const nextbtn = document.getElementById('nextbtn');
+    nextbtn.addEventListener('click', function(){
+      document.querySelector('.first').style.display="block";
+            document.querySelector('.hide').style.display="none";
+      nextbtn.style.display="none";
+    });
+  const backbtn = document.getElementById('nextbty');
+    backbtn.addEventListener('click', function(){
+      document.querySelector('.allinone').style.display="none";
+      document.querySelector('.hide').style.display="block";
+      document.getElementById('nextbty').style.display="none";
+      document.getElementById('downloadBtn').style.display="none";
+      nextbtn.style.display="block";
+    });
+  
+  // download the CV (modern jsPDF)
+<!-- jsPDF for PDF generation -->
+
+async function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const cvElement = document.getElementById("allinone");
+
+  // Make CV visible before capture
+  cvElement.style.display = "block";
+
+  // Capture with html2canvas
+  const canvas = await html2canvas(cvElement, { scale: 2 });
+  const imgData = canvas.toDataURL("image/png");
+
+  const pdf = new jsPDF("p", "mm", "a4");
+  const pdfWidth = pdf.internal.pageSize.getWidth();
+  const pdfHeight = pdf.internal.pageSize.getHeight();
+
+  // Fill entire A4 page (everything shrunk proportionally)
+  pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+
+  // Save file
+  pdf.save("my-cv.pdf");
+}
+
+
+ //name function
+
+  const input =  document.getElementById('nameid')
+  const namehead = document.querySelector('.name');
+  input.addEventListener('input', () => {
+    namehead.textContent = input.value.trim();
+    });
+  const inputphone =  document.getElementById('phoneid')
+  const namephone = document.querySelector('.phone');
+  inputphone.addEventListener('input', () => {
+    namephone.textContent =  "phone: " + inputphone.value.trim() + "|";
+    });
+  const inputemail =  document.getElementById('emailid')
+  const nameemail = document.querySelector('.email');
+  inputemail.addEventListener('input', () => {
+    nameemail.textContent = "email: " + inputemail.value.trim() + "|";
+    });
+  const inputport =  document.getElementById('portid')
+  const nameport = document.querySelector('.port');
+  inputport.addEventListener('input', () => {
+    nameport.textContent = "portfofio: " + inputport.value.trim() + "|";
+    });
+const inputdescribe =  document.getElementById('describeyourselfid')
+  const namedescribe = document.querySelector('.describeyourself');
+  inputdescribe.addEventListener('input', () => {
+    namedescribe.textContent = inputdescribe.value.trim() + ".";
+    });
+const inputjob =  document.getElementById('job-titleid')
+  const namejob = document.querySelector('.job-title');
+  inputjob.addEventListener('input', () => {
+    namejob.textContent = inputjob.value.trim() ;
+    });
+const inputjobtitle =  document.getElementById('current-jobid')
+  const namejobtitle = document.querySelector('.current-job');
+  inputjobtitle.addEventListener('input', () => {
+    namejobtitle.textContent = inputjobtitle.value.trim() ;
+    });
+const inputjobdetails =  document.getElementById('job-detailsid')
+  const namejobdetails = document.querySelector('.job-details');
+  inputjobdetails.addEventListener('input', () => {
+    namejobdetails.textContent = inputjobdetails.value.trim() ;
+    });
+const inputachive =  document.getElementById('achievmentsid')
+  const nameachive = document.querySelector('.achievments');
+  inputachive.addEventListener('input', () => {
+    nameachive.textContent = inputachive.value.trim() ;
+    });
+const inputachive2 =  document.getElementById('achievments2id')
+  const nameachive2 = document.querySelector('.achievments2');
+  inputachive2.addEventListener('input', () => {
+    nameachive2.textContent = inputachive2.value.trim() ;
+    });
+const skill11 =  document.getElementById('skill-name1id')
+  const skill1 = document.querySelector('.skill-name1');
+  skill11.addEventListener('input', () => {
+    skill1.textContent = skill11.value.trim() ;
+    });
+const skill44 =  document.getElementById('skill-name4id')
+  const skill4 = document.querySelector('.skill-name4');
+  skill44.addEventListener('input', () => {
+    skill4.textContent = skill44.value.trim() ;
+    });
+const skill22 =  document.getElementById('skill-name2id')
+  const skill2 = document.querySelector('.skill-name2');
+  skill22.addEventListener('input', () => {
+    skill2.textContent = skill22.value.trim() ;
+    });
+const skill33 =  document.getElementById('skill-name3id')
+  const skill3 = document.querySelector('.skill-name3');
+  skill33.addEventListener('input', () => {
+    skill3.textContent = skill33.value.trim() ;
+    });
+    
+  </script>
+<!-- the load animariin pp
+
+
+section -->
+  <div class="first">
+    <h1 class="a1"> do you wana </h1>
+
+    <button id="right"class="left">view cv</button>
+  </div>
+  <div class="di">
+  <div class="spinner"></div>
+  <h4 class="h84">redirecting to cv</h4>
+  <h4 class="h48">creating a profesional cv </h4>
+  <h4 class="h4488">let wrap things up</h4>
+  <h4  class="h444888">your cv is ready </h4>
+    <div class="pp"> 
+      <p class="p">loading........</p>
+      
+    </div>
+    </div>
+  <style>
+    .first{
+    box-shadow: 5px 4px 8px 3px rgb(265,265,265.1);
+    background-color: grey;
+    margin-top:50%;
+    height: 148px;
+    display: none;
+      
+  }
+  
+  .left{
+     margin-top:28px;
+    display:inline-block;
+    
+  width:84px;
+  height:48px;
+  color:#f2f2f2;
+  background-color:blue;
+  font-size:16px;
+  border:none;
+    position:relative;
+    bottom:-15px;
+  }
+  
+  .right{
+  
+    display:inline-block;
+      width:84px;
+  height:48px;
+  color:#f2f2f2;
+  background-color:blue;
+  font-size:16px;
+  border:none;
+    position:relative;
+    right:-230px;
+     top:43px;
+    vertical-align:top;
+  }
+   .spinner{
+     width:100px;
+     height:100px;
+      border-radius: 50%;
+     position: relative;
+     display: inline-block;
+            }
+   .spinner::before{
+     content:'';
+     position: absolute;
+     width:48px;
+     height:48px;
+     transform: rotate(0deg);
+   z-index:10;
+     animation: roll 3s linear infinite;
+     border-top: 4px dotted blue;
+     border-left: 4px dotted white;
+     border-right: 4px dotted green;
+     border-bottom: 4px dotted red;
+     border-radius:50%;
+     
+   }
+
+  @keyframes roll {
+    0%{
+      transform:rotate(0deg);
+    }
+    100%{
+      transform:rotate(360deg);
+    }
+  }
+ 
+
+  .h84, .h48, .h4488, .h444888{
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+    right:8px;
+    top:-65px;
+  }
+  .h48, .h4488, .h444888{
+    display: none;
+  }
+  .di{
+    box-shadow: 5px 4px 8px 3px rgb(265,265,265.1);
+    background-color: grey;
+    margin-top:50%;
+    height: 148px;
+    display:none;
+  }
+  .p{
+    display: block;
+    position: relative;
+    font-size: 28px;
+  }
+  .pp{
+    display:block;
+    position: relative;
+    bottom: 56px;
+    background-color: transparent;
+    width: 84px;
+  }
+  .fade-out {
+  animation: fadeOut 2s forwards;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1.5;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+  </style>
+  <script>
+  const next = document.getElementById('right');
+  next.addEventListener('click', () => {
+    document.querySelector('.di').style.display='block';
+    document.querySelector('.first').style.display="none";
+    setTimeout(()=>{
+  
+    document.querySelector(".spinner").classList.add("fade-out");
+    setTimeout(() =>{
+    
+      document.querySelector('.allinone').style.display="block";
+      document.getElementById('nextbty').style.display="block";
+      document.getElementById('downloadBtn').style.display="block";
+      document.querySelector('.di').style.display='none';
+  },1000);
+  },8000 );
+  setTimeout(() =>{
+    document.querySelector(".h84").style.display="none";
+  },1000);
+  setTimeout(() =>{
+    document.querySelector(".h48").style.display="inline";
+    setTimeout(() =>{
+      document.querySelector(".h48").style.display="none";
+    },2000);
+    },1000);
+  setTimeout(() =>{
+  document.querySelector(".h4488").style.display="inline";
+    setTimeout(() =>{
+      document.querySelector(".h4488").style.display="none";
+    },4000);
+    },3000);
+    setTimeout(() =>{
+  document.querySelector(".h444888").style.display="inline";
+    setTimeout(() =>{
+      document.querySelector(".h444888").style.display="none";
+    },8000);
+    },7000);
+  
+  });
+  
+  </script>
